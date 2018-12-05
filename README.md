@@ -17,7 +17,8 @@ assumption results in a test being aborted.**
 # project description
 It is often very handy to exclude some tests from running
 on CI - for example - we don't want to run tests that 
-creates files (no permissions to create files on Travis server).
+creates files (for example - 
+there are no permissions to create files on Travis server).
 
 The easiest configuration will be:
 ```
