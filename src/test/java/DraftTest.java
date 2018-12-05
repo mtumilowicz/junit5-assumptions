@@ -1,6 +1,7 @@
 import org.junit.Test;
 
-import static org.junit.Assert.assertEquals;
+import static org.hamcrest.CoreMatchers.is;
+import static org.hamcrest.MatcherAssert.assertThat;
 
 /**
  * Created by mtumilowicz on 2018-12-05.
@@ -9,6 +10,6 @@ public class DraftTest {
     
     @Test
     public void draft() {
-        assertEquals(System.getenv("ENV"), "CI");
+        assertThat(System.getenv("ENV"), is("CI"));
     }
 }
