@@ -10,7 +10,7 @@ public class AssumptionsTest {
     
     @Test
     public void createFile_travisSafe() throws IOException {
-        var file = new File("../../../../file.txt");
+        var file = new File("../../file.txt");
         
 //        assumingThat(() -> !Objects.equals(System.getProperty("user.name"), "travis"),
 //                () -> assertTrue(file.createNewFile()));
