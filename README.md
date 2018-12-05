@@ -17,4 +17,14 @@ assumption results in a test being aborted.**
 # project description
 It is often very handy to exclude some tests from running
 on CI - for example - we don't want to run tests that 
-creates files (free Travis will reject them - )
+creates files (no permissions to create files on Travis server).
+
+The easiest configuration will be:
+```
+var file = new File("file.txt");
+
+assumingThat(() -> !Objects.equals(System.getProperty("user.name"), "travis"),
+        () -> assertTrue(file.createNewFile()));
+
+file.delete();
+```
