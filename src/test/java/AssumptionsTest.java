@@ -16,7 +16,5 @@ public class AssumptionsTest {
 //                () -> assertTrue(file.createNewFile()));
 
         file.createNewFile();
-        
-        file.delete();
     }
 }
