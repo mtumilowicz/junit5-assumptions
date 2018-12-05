@@ -1,5 +1,6 @@
 import org.junit.Test;
 
+import java.io.File;
 import java.util.Objects;
 
 import static org.junit.Assert.assertTrue;
@@ -12,7 +13,11 @@ public class AssumptionsTest {
     
     @Test
     public void createFile_travisSafe() {
+        var file = new File("file.txt");
+        
         assumingThat(() -> !Objects.equals(System.getProperty("user.name"), "travis"),
-                () -> assertTrue(false));
+                () -> assertTrue(file.createNewFile()));
+
+        file.delete();
     }
 }
